@@ -2,17 +2,32 @@
 
 # Part 1
 
-def sum arr
-  # YOUR CODE HERE
+def sum(array)
+  total = 0
+  array.each {| x | total+=x }
+  return total
 end
 
-def max_2_sum arr
-  # YOUR CODE HERE
+def max_2_sum(array)
+  array ? sum(array.max(2)) : 0
 end
 
-def sum_to_n? arr, n
-  # YOUR CODE HERE
+def sum_to_n?(array,n)
+  return false if array.empty? || array.length < 2
+  array.combination(2).to_a.each do |pair|
+
+    if sum(pair) == n 
+      return true
+    end
+  end
+  return false
 end
+
+array = [1,3,2]
+mt_array = []
+## puts sum(array)
+## puts max_2_sum(mt_array)
+puts sum_to_n?(array,5)
 
 # Part 2
 
