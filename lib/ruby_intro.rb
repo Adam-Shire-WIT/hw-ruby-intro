@@ -23,8 +23,8 @@ def sum_to_n?(array,n)
   return false
 end
 
-array = [1,3,2]
-mt_array = []
+#array = [1,3,2]
+#mt_array = []
 ## puts sum(array)
 ## puts max_2_sum(mt_array)
 ## puts sum_to_n?(array,5)
@@ -43,14 +43,26 @@ def binary_multiple_of_4?(s)
   s.match(/^(0|[10]*00$)/) ? true : false
 end
 
-puts starts_with_consonant?('v')
-puts starts_with_consonant?('a')
-puts binary_multiple_of_4?('1100')
+#puts starts_with_consonant?('v')
+#puts starts_with_consonant?('a')
+#puts binary_multiple_of_4?('1100')
 
 # Part 3
 
 
 
 class BookInStock
-# YOUR CODE HERE
+  attr_accessor :isbn, :price
+  def initialize(isbn, price)
+    raise ArgumentError if isbn =='' || price <= 0
+    @isbn = isbn
+    @price = price
+  end
+  
+  def price_as_string
+    "$" + '%.2f' % @price
+  end
 end
+
+@book = BookInStock.new('isbn1', 33.8)
+puts @book.isbn
