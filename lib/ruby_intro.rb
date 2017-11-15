@@ -39,14 +39,17 @@ def starts_with_consonant?(s)
   s.match(/^[a-z&&[^aeiou]]/i) ? true : false
 end
 
-def binary_multiple_of_4? s
-  # YOUR CODE HERE
+def binary_multiple_of_4?(s)
+  s.match(/^(0|[10]*00$)/) ? true : false
 end
 
 puts starts_with_consonant?('v')
 puts starts_with_consonant?('a')
+puts binary_multiple_of_4?('1100')
 
 # Part 3
+
+
 
 class BookInStock
 # YOUR CODE HERE
