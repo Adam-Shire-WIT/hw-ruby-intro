@@ -27,21 +27,24 @@ array = [1,3,2]
 mt_array = []
 ## puts sum(array)
 ## puts max_2_sum(mt_array)
-puts sum_to_n?(array,5)
+## puts sum_to_n?(array,5)
 
 # Part 2
 
 def hello(name)
-  # YOUR CODE HERE
+ return "Hello, #{name}"
 end
 
-def starts_with_consonant? s
-  # YOUR CODE HERE
+def starts_with_consonant?(s)
+  s.match(/^[a-z&&[^aeiou]]/i) ? true : false
 end
 
 def binary_multiple_of_4? s
   # YOUR CODE HERE
 end
+
+puts starts_with_consonant?('v')
+puts starts_with_consonant?('a')
 
 # Part 3
 
